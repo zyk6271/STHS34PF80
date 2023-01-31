@@ -282,7 +282,7 @@ int rt_hw_sths34pf80_init(const char *name, struct rt_sensor_config *cfg)
         sensor_temp->ops = &sensor_ops;
         sensor_temp->module = module;
 
-        result = rt_hw_sensor_register(sensor_temp, name, RT_DEVICE_FLAG_RDWR, RT_NULL);
+        result = rt_hw_sensor_register(sensor_temp, name, RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX, RT_NULL);
         if (result != RT_EOK)
         {
             LOG_E("device register err code: %d", result);
@@ -304,7 +304,7 @@ int rt_hw_sths34pf80_init(const char *name, struct rt_sensor_config *cfg)
         sensor_motion->ops = &sensor_ops;
         sensor_motion->module = module;
 
-        result = rt_hw_sensor_register(sensor_motion, name, RT_DEVICE_FLAG_RDWR,RT_NULL);
+        result = rt_hw_sensor_register(sensor_motion, name, RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX,RT_NULL);
         if (result != RT_EOK)
         {
             LOG_E("device register err code: %d", result);
