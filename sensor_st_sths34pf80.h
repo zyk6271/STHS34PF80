@@ -9,6 +9,13 @@
  */
 #ifndef APPLICATIONS_SENSOR_ST_S34F80_H_
 #define APPLICATIONS_SENSOR_ST_S34F80_H_
+#include "rtthread.h"
+#include "rtdevice.h"
+#include "stdint.h"
+#include "sths34pf80.h"
+#include <rtdbg.h>
+
+int rt_hw_sths34pf80_init(const char *name, struct rt_sensor_config *cfg);
 
 
 

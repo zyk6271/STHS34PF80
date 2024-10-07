@@ -7,15 +7,11 @@
  * Date           Author       Notes
  * 2023-01-29     Rick       the first version
  */
-#include "rtthread.h"
-#include "rtdevice.h"
-#include "stdint.h"
-#include "sths34pf80.h"
 #include "sensor_st_sths34pf80.h"
 
 #define DBG_TAG "sensor.st.sths34pf80"
 #define DBG_LVL DBG_LOG
-#include <rtdbg.h>
+
 
 static STHS34PF80_Object_t sths34pf80;
 static struct rt_i2c_bus_device *i2c_bus_dev;
