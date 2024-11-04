@@ -123,7 +123,7 @@ static rt_err_t _sths34pf80_set_odr(rt_sensor_t sensor, rt_uint16_t odr)
 
     return RT_EOK;
 }
-static rt_size_t _sths34pf80_polling_get_data(rt_sensor_t sensor, struct rt_sensor_data *data)
+static RT_SIZE_TYPE _sths34pf80_polling_get_data(rt_sensor_t sensor, struct rt_sensor_data *data)
 {
     uint16_t val;
     switch(sensor->info.type)
@@ -178,7 +178,7 @@ static rt_err_t _sths34pf80_set_mode(rt_sensor_t sensor, rt_uint8_t mode)
     }
     return RT_EOK;
 }
-static rt_size_t sths34pf80_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
+static RT_SIZE_TYPE sths34pf80_fetch_data(struct rt_sensor_device *sensor, void *buf, rt_size_t len)
 {
     if (sensor->config.mode == RT_SENSOR_MODE_POLLING)
     {

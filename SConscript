@@ -4,9 +4,12 @@ Import('rtconfig')
 src   = []
 cwd   = GetCurrentDir()
 
-src += Glob('sensor_st_sths34pf80.c.c')
 src += Glob('libraries/sths34pf80_reg.c')
 src += Glob('libraries/sths34pf80.c')
+
+if GetDepend('PKG_STHS34PF80_USING_SENSOR_V1'):
+    src += ['sensor_st_sths34pf80.c']
+
 
 # add sths34pf80 include path.
 path  = [cwd, cwd + '/libraries']
